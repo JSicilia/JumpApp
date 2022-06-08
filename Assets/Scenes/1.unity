@@ -1045,17 +1045,23 @@ Tilemap:
   - first: {x: -8, y: -16, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileIndex: 8
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+<<<<<<< HEAD
 =======
       m_TileIndex: 3
       m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 8
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -1234,6 +1240,7 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 2
     m_Data: {fileID: -1375754038915248532, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 4
@@ -1263,6 +1270,26 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 287835088}
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 4
+    m_Data: {fileID: 1182099769515263189, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  - m_RefCount: 5
+    m_Data: {fileID: 6638037985140595425, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 287835088}
+  - m_RefCount: 1
+    m_Data: {fileID: 1062562868}
+  - m_RefCount: 2
+    m_Data: {fileID: 1149548440}
+  - m_RefCount: 1
+    m_Data: {fileID: 349686203}
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   m_TileMatrixArray:
   - m_RefCount: 16
     m_Data:
@@ -1289,6 +1316,7 @@ Tilemap:
     m_Data: {r: 2.7042e-41, g: 2.7042e-41, b: 2.7042e-41, a: 2.7042e-41}
   - m_RefCount: 0
     m_Data: {r: 2.7042e-41, g: 2.7042e-41, b: 2.7042e-41, a: 2.7042e-41}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - m_RefCount: 2
     m_Data: {r: 0.9918792, g: 0.5350333, b: 0.6021484, a: 1}
@@ -1303,16 +1331,25 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 2.8004e-41, g: 2.8004e-41, b: 2.8004e-41, a: 2.8004e-41}
   - m_RefCount: 1
+=======
+  - m_RefCount: 2
+>>>>>>> parent of 6c0fe13 (Level adjustment)
     m_Data: {r: 0.9918792, g: 0.5350333, b: 0.6021484, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.9085863, g: 0.53701055, b: 0.5421353, a: 1}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 1
     m_Data: {r: 0.8666997, g: 0.40003407, b: 0.47183263, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.836912, g: 0.5404765, b: 0.61825794, a: 1}
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2223,12 +2260,16 @@ Tilemap:
   m_GameObject: {fileID: 274399938}
   m_Enabled: 1
   m_Tiles:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - first: {x: -4, y: -6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 5
       m_TileSpriteIndex: 5
+<<<<<<< HEAD
 =======
   - first: {x: 1, y: 2, z: 0}
     second:
@@ -2236,17 +2277,23 @@ Tilemap:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 3
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - first: {x: -3, y: -6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 4
       m_TileSpriteIndex: 4
+<<<<<<< HEAD
 =======
   - first: {x: 2, y: 2, z: 0}
     second:
@@ -2254,12 +2301,17 @@ Tilemap:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 3
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - first: {x: -2, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -2275,6 +2327,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 3
       m_TileSpriteIndex: 3
+<<<<<<< HEAD
 =======
   - first: {x: 3, y: 2, z: 0}
     second:
@@ -2282,6 +2335,8 @@ Tilemap:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 3
       m_TileObjectToInstantiateIndex: 65535
@@ -2301,6 +2356,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ae434cdaefed700489fb0a6d4d11b09c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ee6a1516146038d4cb6bebb525267bc3, type: 2}
+<<<<<<< HEAD
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2330,6 +2386,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 9746c5cb121a66349a498bd9d1783344, type: 2}
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2337,6 +2395,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -2358,6 +2417,16 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 3
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 1
+    m_Data: {fileID: 7707518054919539190, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: -6704875526042115582, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -935133839131568872, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  m_TileMatrixArray:
+  - m_RefCount: 4
+>>>>>>> parent of 6c0fe13 (Level adjustment)
     m_Data:
       e00: 1
       e01: 0
@@ -2382,11 +2451,15 @@ Tilemap:
     m_Data: {r: 3.8173284e+19, g: 3.8173284e+19, b: 3.8173284e+19, a: 3.8173284e+19}
   - m_RefCount: 0
     m_Data: {r: 3.8173284e+19, g: 3.8173284e+19, b: 3.8173284e+19, a: 3.8173284e+19}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - m_RefCount: 4
 =======
   - m_RefCount: 3
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 4
+>>>>>>> parent of 6c0fe13 (Level adjustment)
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -6692,6 +6765,7 @@ Tilemap:
   - first: {x: -4, y: 9, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       m_TileIndex: 14
       m_TileSpriteIndex: 2
@@ -6699,6 +6773,10 @@ Tilemap:
       m_TileIndex: 5
       m_TileSpriteIndex: 25
 >>>>>>> Stashed changes
+=======
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -6977,6 +7055,7 @@ Tilemap:
   - first: {x: -2, y: 16, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       m_TileIndex: 4
       m_TileSpriteIndex: 54
@@ -6984,6 +7063,10 @@ Tilemap:
       m_TileIndex: 3
       m_TileSpriteIndex: 22
 >>>>>>> Stashed changes
+=======
+      m_TileIndex: 4
+      m_TileSpriteIndex: 54
+>>>>>>> parent of 6c0fe13 (Level adjustment)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 21
       m_TileObjectToInstantiateIndex: 65535
@@ -7226,6 +7309,46 @@ Tilemap:
       m_TileSpriteIndex: 45
       m_TileMatrixIndex: 0
       m_TileColorIndex: 32
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741827
+  - first: {x: -7, y: 20, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741827
+  - first: {x: -6, y: 20, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741827
+  - first: {x: -5, y: 20, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741827
+  - first: {x: -4, y: 20, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741827
@@ -9442,6 +9565,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - m_RefCount: 5
 =======
@@ -9455,6 +9579,12 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 5
+    m_Data: {fileID: -8253769309884863239, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+  - m_RefCount: 9
+    m_Data: {fileID: 4302497297917023143, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
@@ -9465,13 +9595,17 @@ Tilemap:
     m_Data: {fileID: 6422927979422473017, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1967661066}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 1
     m_Data: {fileID: 733270008}
   - m_RefCount: 3
     m_Data: {fileID: 1201306132}
   - m_RefCount: 1
     m_Data: {fileID: 3003288777199617834, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+<<<<<<< HEAD
   - m_RefCount: 1
     m_Data: {fileID: 482935698}
 =======
@@ -9488,6 +9622,10 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 3877356395283462922, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 1
+    m_Data: {fileID: 482935698}
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 1
     m_Data: {fileID: 1268508679}
   - m_RefCount: 1
@@ -9588,6 +9726,7 @@ Tilemap:
     m_Data: {r: 0.80912113, g: 0.48443213, b: 0.55848944, a: 1}
   - m_RefCount: 0
     m_Data: {r: 2.716e-41, g: 2.716e-41, b: 2.716e-41, a: 2.716e-41}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - m_RefCount: 2
     m_Data: {r: 0.9061311, g: 0.38233444, b: 0.44844142, a: 1}
@@ -9597,6 +9736,11 @@ Tilemap:
     m_Data: {r: 2.8183e-41, g: 2.8183e-41, b: 2.8183e-41, a: 2.8183e-41}
   - m_RefCount: 3
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 2
+    m_Data: {r: 0.9061311, g: 0.38233444, b: 0.44844142, a: 1}
+  - m_RefCount: 5
+>>>>>>> parent of 6c0fe13 (Level adjustment)
     m_Data: {r: 0.8648112, g: 0.55960435, b: 0.60080343, a: 1}
   - m_RefCount: 33
     m_Data: {r: 0.7179536, g: 0.47353104, b: 0.49844286, a: 1}
@@ -9609,6 +9753,7 @@ Tilemap:
     m_Data: {r: 0.75704587, g: 0.40130344, b: 0.45629328, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.7326127, g: 0.34988207, b: 0.43029493, a: 1}
+<<<<<<< HEAD
   - m_RefCount: 2
     m_Data: {r: 0.94950897, g: 0.4895268, b: 0.5942482, a: 1}
   - m_RefCount: 3
@@ -9637,6 +9782,19 @@ Tilemap:
     m_Data: {r: 0.75704587, g: 0.40130344, b: 0.45629328, a: 1}
   - m_RefCount: 1
 >>>>>>> Stashed changes
+=======
+  - m_RefCount: 2
+    m_Data: {r: 0.94950897, g: 0.4895268, b: 0.5942482, a: 1}
+  - m_RefCount: 3
+    m_Data: {r: 0.9126922, g: 0.4118176, b: 0.46170273, a: 1}
+  - m_RefCount: 8
+    m_Data: {r: 0.96795833, g: 0.45059043, b: 0.60405576, a: 1}
+  - m_RefCount: 6
+    m_Data: {r: 0.93480814, g: 0.49637714, b: 0.6089011, a: 1}
+  - m_RefCount: 2
+    m_Data: {r: 0.978224, g: 0.6727162, b: 0.7231043, a: 1}
+  - m_RefCount: 2
+>>>>>>> parent of 6c0fe13 (Level adjustment)
     m_Data: {r: 0.85385936, g: 0.5853121, b: 0.63956213, a: 1}
   - m_RefCount: 6
     m_Data: {r: 0.96553326, g: 0.63548625, b: 0.72495306, a: 1}
@@ -9654,13 +9812,17 @@ Tilemap:
     m_Data: {r: 0.7178609, g: 0.4912466, b: 0.51010036, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.83410245, g: 0.52501786, b: 0.6135725, a: 1}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 3
     m_Data: {r: 0.8423902, g: 0.53707755, b: 0.5936492, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.78765213, g: 0.5436712, b: 0.57083625, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.8359712, g: 0.38558477, b: 0.4430776, a: 1}
+<<<<<<< HEAD
 =======
   - m_RefCount: 1
     m_Data: {r: 0.978224, g: 0.6727162, b: 0.7231043, a: 1}
@@ -9669,6 +9831,8 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {r: 0.9061311, g: 0.38233444, b: 0.44844142, a: 1}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11804,6 +11968,7 @@ Tilemap:
     m_Data: {fileID: -917370030307303525, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 555336522}
+<<<<<<< HEAD
 =======
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -11816,6 +11981,8 @@ Tilemap:
     m_Data: {fileID: -1335725074728332750, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 6282181019893434838, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
+=======
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 1
     m_Data: {fileID: 2018324887}
   - m_RefCount: 1
@@ -11823,11 +11990,15 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 2012561621}
   - m_RefCount: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_Data: {fileID: 1748043976}
 =======
     m_Data: {fileID: -917370030307303525, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
 >>>>>>> Stashed changes
+=======
+    m_Data: {fileID: 1748043976}
+>>>>>>> parent of 6c0fe13 (Level adjustment)
   - m_RefCount: 1
     m_Data: {fileID: -1337146083295434537, guid: 3f0e50f54a884fe4f861ab02cbf2aee4, type: 3}
   m_TileMatrixArray:
