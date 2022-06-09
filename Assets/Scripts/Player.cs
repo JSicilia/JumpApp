@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -196,6 +197,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Completed level");
         CompletionTime = GameTime;
+        SceneManager.LoadScene("2");
     }
 
     void TouchInput()
