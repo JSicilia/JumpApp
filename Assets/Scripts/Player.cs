@@ -206,12 +206,12 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && touchingGround && canJump && !isFalling)
         {
 
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase >= TouchPhase.Began && touchingGround && canJump && !isFalling)
+            if (touch.phase >= TouchPhase.Began)
             {
                 animator.SetBool("splat", false);
                animator.SetBool("landed", false);
@@ -248,7 +248,7 @@ public class Player : MonoBehaviour
 
 
 
-            if (touch.phase == TouchPhase.Ended && touchingGround && canJump && !isFalling)
+            if (touch.phase == TouchPhase.Ended)
             {
                 if (jumpValue < 2f)
                 {
@@ -260,6 +260,18 @@ public class Player : MonoBehaviour
                 currentTime = 0;
             }
         }
+    }
+
+    private bool lastPositionMatch()
+    {
+        if (startOfFall == rb.transform.position)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+        
     }
 
 
