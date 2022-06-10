@@ -42,10 +42,6 @@ public class Player : MonoBehaviour
     private float jumpTimeCount;
     public float jumpTime;
 
-    public Text startF;
-    public Text FinalF;
-    public Text timer;
-    public Text JHeight;
     private float currentTime;
     public TimeSpan time;
 
@@ -60,7 +56,7 @@ public class Player : MonoBehaviour
 
         string path = Application.persistentDataPath + "/player.file";
         Debug.Log(path);
-        if (File.Exists(path))
+        if (File.Exists(path) && !SceneManager.GetSceneByName("Menu").isLoaded)
         {
             LoadPlayer();
         }
@@ -79,11 +75,16 @@ public class Player : MonoBehaviour
         //Total game time taken while playing.
         GameTime = GameTime + Time.deltaTime;
 
-        timer.text = rb.velocity.y.ToString();
-        JHeight.text = rb.velocity.x.ToString();
         Vector3 pos = Camera.main.WorldToViewportPoint(rb.transform.position);
+
+
         touchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, 1<<6);
+
+
+
         touchingSlope = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, 1<<7);
+
+
 
         //If player jumps out of the screen then reset them back to where they were
         if (pos.x < -0.05 || 1.05 < pos.x)
