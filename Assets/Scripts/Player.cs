@@ -139,14 +139,12 @@ public class Player : MonoBehaviour
             animator.SetBool("splat", true);
             isFalling = false;
             Invoke("PlayerCanJump", 0.1f);
-        } else if (isFalling && touchingGround)
+        } else if (isFalling && touchingGround && !touchingSlope)
         {
             Debug.Log("player hit floor no splat");
-            //animator.SetBool("landed", true);
             animator.SetTrigger("PlayerLanded");
             isFalling = false;
             Invoke("PlayerCanJump", 0.1f);
-            //rb.velocity = Vector3.zero;
         }
 
         if (!touchingGround)
@@ -174,14 +172,13 @@ public class Player : MonoBehaviour
         if (justJumped)
         {
             justJumped = false;
-            isFalling = true;
+
             canJump = false;
             TotalJumps = TotalJumps + 1;
             rb.velocity = new Vector2(directionValue, jumpValue);
-            Invoke("ResetJump", 0.3f);
+            Invoke("ResetJump", 0.1f);
 
         }
-
 
     }
 
@@ -192,6 +189,7 @@ public class Player : MonoBehaviour
 
     void ResetJump()
     {
+        isFalling = true;
         jumpValue = 0.0f;
     }
 
@@ -212,7 +210,6 @@ public class Player : MonoBehaviour
 
         if (Input.touchCount > 0 && touchingGround && canJump && !isFalling)
         {
-
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase >= TouchPhase.Began)

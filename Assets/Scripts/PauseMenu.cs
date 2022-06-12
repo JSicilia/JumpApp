@@ -43,7 +43,8 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         player.SavePlayer();
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1); 
     }
 
     public void Restart()

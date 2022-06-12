@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour
     public float[] levelPosition;
     public Text levelTag;
     private int levelIndex;
+    public GameObject levelTagObject;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class CameraMovement : MonoBehaviour
 
         if (levelPosition.Contains(levelPos))
         {
+            levelTagObject.SetActive(true);
             levelIndex = System.Array.IndexOf(levelPosition, worldCam.transform.position.y);
             Debug.Log(levels[levelIndex]);
             levelTag.text = levels[levelIndex];
@@ -60,7 +62,12 @@ public class CameraMovement : MonoBehaviour
     void FadeLevelTagOut()
     {
         Debug.Log("fade out called");
-        LeanTween.alphaText(levelTag.rectTransform, 0f, 2f).setEase(LeanTweenType.linear);
+        LeanTween.alphaText(levelTag.rectTransform, 0f, 2f).setEase(LeanTweenType.linear).setOnComplete(LevelTagHide);
+    }
+
+    void LevelTagHide()
+    {
+        levelTagObject.SetActive(false);
     }
 
     void DisplayLevel()
