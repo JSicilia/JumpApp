@@ -74,7 +74,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (levelPosition.Contains(worldCam.transform.position.y))
         {
-
+            levelTagObject.SetActive(true);
             levelIndex = System.Array.IndexOf(levelPosition, worldCam.transform.position.y);
             Debug.Log(levels[levelIndex]);
             levelTag.text = levels[levelIndex];

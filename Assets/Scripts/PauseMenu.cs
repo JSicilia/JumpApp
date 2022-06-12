@@ -44,14 +44,14 @@ public class PauseMenu : MonoBehaviour
     {
         player.SavePlayer();
         Time.timeScale = 1;
-        SceneManager.LoadScene(1); 
+        SceneManager.LoadScene("Menu"); 
     }
 
     public void Restart()
     {
         Vector3 restart = new Vector3(-3f, -7f, 0);
         SaveSystem.SavePlayer(player, restart, false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("1");
         Time.timeScale = 1;
     }
 }

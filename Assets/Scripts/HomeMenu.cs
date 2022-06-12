@@ -64,7 +64,7 @@ public class HomeMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("1");
         Time.timeScale = 1;
     }
 
@@ -72,7 +72,7 @@ public class HomeMenu : MonoBehaviour
     {
         Vector3 restart = new Vector3(-3f, -7f, 0);
         SaveSystem.SavePlayer(player, restart, false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("1");
         Time.timeScale = 1;
     }
 

@@ -60654,6 +60654,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 836950264}
     m_Modifications:
+    - target: {fileID: 1528023050068676518, guid: 574d27ff495fcde4c982b24ee65d489d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1649855298}
+    - target: {fileID: 1528023050068676518, guid: 574d27ff495fcde4c982b24ee65d489d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1528023050068676519, guid: 574d27ff495fcde4c982b24ee65d489d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
