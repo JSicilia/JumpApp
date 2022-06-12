@@ -61295,6 +61295,7 @@ MonoBehaviour:
   player: {fileID: 8097266395828182861, guid: ddc30c73922c1eb45a55e73460d67dad, type: 3}
   OptionUI: {fileID: 1081856419}
   MainMenuUI: {fileID: 194180637}
+  ContinueButton: {fileID: 1868957128}
 --- !u!114 &1649855299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61974,6 +61975,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1868957128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1528023050068676520, guid: 574d27ff495fcde4c982b24ee65d489d, type: 3}
+  m_PrefabInstance: {fileID: 269292597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1940124167
 GameObject:
   m_ObjectHideFlags: 0

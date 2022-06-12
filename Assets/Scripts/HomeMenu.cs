@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,15 +9,31 @@ public class HomeMenu : MonoBehaviour
     public Player player;
     public GameObject OptionUI;
     public GameObject MainMenuUI;
+    public GameObject ContinueButton;
     // Start is called before the first frame update
     void Start()
     {
-        //LeanTween.
+        string path = Application.persistentDataPath + "/player.file";
+        Debug.Log(path);
+        if (File.Exists(path) && SceneManager.GetSceneByName("Menu").isLoaded)
+        {
+            ContinueButton.SetActive(true);
+        } else
+        {
+            ContinueButton.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
         
     }
 
