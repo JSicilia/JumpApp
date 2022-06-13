@@ -78,7 +78,7 @@ public class CameraMovement : MonoBehaviour
             levelIndex = System.Array.IndexOf(levelPosition, worldCam.transform.position.y);
             Debug.Log(levels[levelIndex]);
             levelTag.text = levels[levelIndex];
-            levels[levelIndex] = "";
+            //levels[levelIndex] = "";
             LeanTween.alphaText(levelTag.rectTransform, 1f, 2f).setEase(LeanTweenType.linear).setOnComplete(FadeLevelTagOut);
         }
     }

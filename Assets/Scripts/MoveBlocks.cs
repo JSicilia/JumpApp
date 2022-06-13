@@ -8,6 +8,7 @@ public class MoveBlocks : MonoBehaviour
     public float frequency;
     public float magnitude;
     public float offset;
+    public bool vertical;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,6 +32,13 @@ public class MoveBlocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPosition + transform.right * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        if (vertical)
+        {
+            transform.position = startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        } else
+        {
+            transform.position = startPosition + transform.right * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        }
+        
     }
 }

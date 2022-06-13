@@ -64,9 +64,12 @@ public class Player : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Fan"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y+10f);
+        }
     }
 
 
