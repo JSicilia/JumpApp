@@ -29,11 +29,18 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         PauseMenuUI.SetActive(true);
+        LeanTween.scale(PauseMenuUI, new Vector3(0.9f, 0.5f, 1), 0.2f).setEaseInQuint().setIgnoreTimeScale(true);
         PauseButton.SetActive(false);
         Time.timeScale = 0;
     }
 
     public void Resume()
+    {
+        LeanTween.scale(PauseMenuUI, new Vector3(0, 0, 0), 0.2f).setEaseOutQuint().setIgnoreTimeScale(true).setOnComplete(ClosePauseMenu);
+        
+    }
+
+    public void ClosePauseMenu()
     {
         PauseMenuUI.SetActive(false);
         PauseButton.SetActive(true);

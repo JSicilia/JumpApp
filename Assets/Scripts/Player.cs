@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float GameTime;
     public int TotalJumps;
     private float CompletionTime;
+    public ParticleSystem dust;
 
     private float jumpHeight = 8.5f;
     private Rigidbody2D rb;
@@ -176,6 +177,10 @@ public class Player : MonoBehaviour
             canJump = false;
             TotalJumps = TotalJumps + 1;
             rb.velocity = new Vector2(directionValue, jumpValue);
+            if (jumpValue > 5)
+            {
+                CreateDust();
+            }
             Invoke("ResetJump", 0.1f);
 
         }
@@ -273,6 +278,11 @@ public class Player : MonoBehaviour
             return false;
         }
         
+    }
+
+    public void CreateDust()
+    {
+        dust.Play();
     }
 
 
