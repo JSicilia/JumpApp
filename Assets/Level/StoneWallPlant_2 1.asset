@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: bigpipe_2
+  m_Name: StoneWallPlant_2 1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -546668441823358977, guid: 911a87fac969d694b80c8cd8cf4b5ad3, type: 3}
+  m_Sprite: {fileID: 6888152282931912582, guid: a78172197b41fd143a17032b991cd920, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

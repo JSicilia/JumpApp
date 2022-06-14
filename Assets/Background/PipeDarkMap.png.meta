@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 27d450996c968de418c32add720cb545
+guid: a34b90b7d57ee1f429eeec9610c408a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5717758866492980208
-    second: PipeDark_0
+      213: -355297548864158073
+    second: PipeDarkMap_0
   - first:
-      213: 3931609924522129639
-    second: PipeDark_1
+      213: 7876448658533760469
+    second: PipeDarkMap_1
   - first:
-      213: 972609540622559388
-    second: PipeDark_2
+      213: 82047035421977380
+    second: PipeDarkMap_2
   - first:
-      213: 6411164071597958450
-    second: PipeDark_3
+      213: -8071331694044810391
+    second: PipeDarkMap_3
   - first:
-      213: 8306880965028803014
-    second: PipeDark_4
+      213: 3929790844626856771
+    second: PipeDarkMap_4
   - first:
-      213: -6254042136993811
-    second: PipeDark_5
+      213: 884230672745850454
+    second: PipeDarkMap_5
   - first:
-      213: 605420203353338295
-    second: PipeDark_6
+      213: 945611048563260161
+    second: PipeDarkMap_6
   - first:
-      213: 1574799983778919606
-    second: PipeDark_7
+      213: -8929004198697444787
+    second: PipeDarkMap_7
   - first:
-      213: -1536987514851176757
-    second: PipeDark_8
+      213: 4199689827185322279
+    second: PipeDarkMap_8
   - first:
-      213: -3473624592641149730
-    second: PipeDark_9
+      213: 7681367636458456732
+    second: PipeDarkMap_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PipeDark_0
+      name: PipeDarkMap_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,20 +153,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 014885bda9076a0b0800000000000000
-      internalID: -5717758866492980208
+      spriteID: 786826203cab11bf0800000000000000
+      internalID: -355297548864158073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_1
+      name: PipeDarkMap_1
       rect:
         serializedVersion: 2
         x: 64
@@ -174,20 +174,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8ba825562ef8630800000000000000
-      internalID: 3931609924522129639
+      spriteID: 5ddb18fd254ce4d60800000000000000
+      internalID: 7876448658533760469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_2
+      name: PipeDarkMap_2
       rect:
         serializedVersion: 2
         x: 128
@@ -195,20 +195,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c98a6fd59376f7d00800000000000000
-      internalID: 972609540622559388
+      spriteID: 42b6331185d732100800000000000000
+      internalID: 82047035421977380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_3
+      name: PipeDarkMap_3
       rect:
         serializedVersion: 2
         x: 192
@@ -216,20 +216,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235e75c51c709f850800000000000000
-      internalID: 6411164071597958450
+      spriteID: 9637b18869edcff80800000000000000
+      internalID: -8071331694044810391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_4
+      name: PipeDarkMap_4
       rect:
         serializedVersion: 2
         x: 256
@@ -237,20 +237,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c1fef7d938f74370800000000000000
-      internalID: 8306880965028803014
+      spriteID: 34be097c3fb698630800000000000000
+      internalID: 3929790844626856771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_5
+      name: PipeDarkMap_5
       rect:
         serializedVersion: 2
         x: 0
@@ -258,20 +258,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def93085bf7c9eff0800000000000000
-      internalID: -6254042136993811
+      spriteID: 656658cac1b654c00800000000000000
+      internalID: 884230672745850454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_6
+      name: PipeDarkMap_6
       rect:
         serializedVersion: 2
         x: 64
@@ -279,20 +279,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b178b0a772e66800800000000000000
-      internalID: 605420203353338295
+      spriteID: 10b3c451d3c7f1d00800000000000000
+      internalID: 945611048563260161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_7
+      name: PipeDarkMap_7
       rect:
         serializedVersion: 2
         x: 128
@@ -300,20 +300,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b4fe69dd30dad510800000000000000
-      internalID: 1574799983778919606
+      spriteID: d4adaaa3dfdc51480800000000000000
+      internalID: -8929004198697444787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_8
+      name: PipeDarkMap_8
       rect:
         serializedVersion: 2
         x: 192
@@ -321,20 +321,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcec511aff58baae0800000000000000
-      internalID: -1536987514851176757
+      spriteID: 729e33c95ab484a30800000000000000
+      internalID: 4199689827185322279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PipeDark_9
+      name: PipeDarkMap_9
       rect:
         serializedVersion: 2
         x: 256
@@ -342,14 +342,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4309846d43bcfc0800000000000000
-      internalID: -3473624592641149730
+      spriteID: c96c940fa23b99a60800000000000000
+      internalID: 7681367636458456732
       vertices: []
       indices: 
       edges: []
@@ -363,9 +363,7 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: a34b90b7d57ee1f429eeec9610c408a1, type: 3}
-      name: _NormalMap
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
