@@ -46,7 +46,7 @@ public class HomeMenu : MonoBehaviour
     public void CloseMenuForOptions()
     {
         MainMenuUI.SetActive(false);
-        LeanTween.scale(OptionUI, new Vector3(0.8f, 0.6f, 1), 0.3f).setEaseInQuint();
+        LeanTween.scale(OptionUI, new Vector3(1, 1, 1), 0.3f).setEaseInQuint();
         
     }
 
@@ -59,7 +59,7 @@ public class HomeMenu : MonoBehaviour
     public void CloseOptionsForMenu()
     {
         OptionUI.SetActive(false);
-        LeanTween.scale(MainMenuUI, new Vector3(0.8f, 0.6f, 1), 0.3f).setEaseInQuint();
+        LeanTween.scale(MainMenuUI, new Vector3(1, 1, 1), 0.3f).setEaseInQuint();
     }
 
     public void ContinueGame()
