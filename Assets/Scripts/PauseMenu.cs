@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject DeathDisplay;
     public GameObject PauseMenuUI;
     public GameObject PauseButton;
+    public UIDocument InGameMenu;
     public Player player;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+        InGameMenu.rootVisualElement.Q<Button>("ResumeIG").clicked += () => Resume();
+        InGameMenu.rootVisualElement.Q<Button>("RestartIG").clicked += () => Restart();
+        InGameMenu.rootVisualElement.Q<Button>("ExitIG").clicked += () => Exit();
+    }
+
+    private void Start()
+    {
+        InGameMenu.rootVisualElement.style.display = DisplayStyle.None;
     }
 
     // Update is called once per frame
@@ -28,16 +38,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        PauseMenuUI.SetActive(true);
-        LeanTween.scale(PauseMenuUI, new Vector3(0.9f, 0.5f, 1), 0.2f).setEaseInQuint().setIgnoreTimeScale(true);
+        InGameMenu.rootVisualElement.style.display = DisplayStyle.Flex;
         PauseButton.SetActive(false);
         Time.timeScale = 0;
+        DeathDisplay.SetActive(true);
+        LeanTween.alpha(DeathDisplay.GetComponent<RectTransform>(), 1f, 0f);
+        //LeanTween.value(DeathCount.gameObject, a => DeathCount.color = a, new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), 0f);
     }
 
     public void Resume()
     {
-        LeanTween.scale(PauseMenuUI, new Vector3(0, 0, 0), 0.2f).setEaseOutQuint().setIgnoreTimeScale(true).setOnComplete(ClosePauseMenu);
-        
+        InGameMenu.rootVisualElement.style.display = DisplayStyle.None;
+        PauseButton.SetActive(true);
+        Time.timeScale = 1;
+        DeathDisplay.SetActive(false);
+        LeanTween.alpha(DeathDisplay.GetComponent<RectTransform>(), 0f, 0f);
     }
 
     public void ClosePauseMenu()

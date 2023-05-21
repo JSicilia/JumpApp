@@ -1,0 +1,9 @@
+#MenuBG {
+    width: 100%;
+    opacity: 0;
+    flex-grow: 1;
+    transition-property: opacity;
+    transition-timing-function: ease-out-back;
+    transition-duration: 1.75s;
+    background-color: rgba(0, 0, 0, 255);
+}

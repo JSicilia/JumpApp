@@ -3,24 +3,39 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class HomeMenu : MonoBehaviour
 {
+
     public Player player;
-    public GameObject OptionUI;
+    public UIDocument MenuUIDoc;
+    public UIDocument OptionsUIDoc;
+    public GameObject OptionsUI;
     public GameObject MainMenuUI;
-    public GameObject ContinueButton;
+    //public GameObject ContinueButton;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        MenuUIDoc.rootVisualElement.Q<Button>("NewGameMain").clicked += () => NewGame();
+        MenuUIDoc.rootVisualElement.Q<Button>("ContinueMain").clicked += () => ContinueGame();
+        MenuUIDoc.rootVisualElement.Q<Button>("ExitMain").clicked += () => ExitGame();
+        MenuUIDoc.rootVisualElement.Q<Button>("OptionsMain").clicked += () => GoToOptions();
+        OptionsUIDoc.rootVisualElement.Q<Button>("BackOptions").clicked += () => LeaveOptions();
+    }
+
     void Start()
     {
+        OptionsUIDoc.rootVisualElement.style.display = DisplayStyle.None;
         string path = Application.persistentDataPath + "/player.file";
         Debug.Log(path);
         if (File.Exists(path) && SceneManager.GetSceneByName("Menu").isLoaded)
         {
-            ContinueButton.SetActive(true);
+            MenuUIDoc.rootVisualElement.Q<Button>("ContinueMain").style.display = DisplayStyle.Flex;
         } else
         {
-            ContinueButton.SetActive(false);
+            MenuUIDoc.rootVisualElement.Q<Button>("ContinueMain").style.display = DisplayStyle.None;
         }
     }
 
@@ -36,31 +51,19 @@ public class HomeMenu : MonoBehaviour
         }
         
     }
-
+    
     public void GoToOptions()
     {
-        LeanTween.scale(MainMenuUI, new Vector3(0, 0, 0), 0.4f).setEaseOutQuint().setOnComplete(CloseMenuForOptions);
-        OptionUI.SetActive(true);
+        MenuUIDoc.rootVisualElement.style.display = DisplayStyle.None;
+        OptionsUIDoc.rootVisualElement.style.display = DisplayStyle.Flex;
     }
-
-    public void CloseMenuForOptions()
-    {
-        MainMenuUI.SetActive(false);
-        LeanTween.scale(OptionUI, new Vector3(1, 1, 1), 0.3f).setEaseInQuint();
-        
-    }
-
+    
     public void LeaveOptions()
     {
-        LeanTween.scale(OptionUI, new Vector3(0, 0, 0), 0.4f).setEaseOutQuint().setOnComplete(CloseOptionsForMenu);
-        MainMenuUI.SetActive(true);
+        MenuUIDoc.rootVisualElement.style.display = DisplayStyle.Flex;
+        OptionsUIDoc.rootVisualElement.style.display = DisplayStyle.None;
     }
 
-    public void CloseOptionsForMenu()
-    {
-        OptionUI.SetActive(false);
-        LeanTween.scale(MainMenuUI, new Vector3(1, 1, 1), 0.3f).setEaseInQuint();
-    }
 
     public void ContinueGame()
     {
@@ -70,6 +73,7 @@ public class HomeMenu : MonoBehaviour
 
     public void NewGame()
     {
+        PlayerPrefs.SetInt("SeenTutorial", 0);
         Vector3 restart = new Vector3(-3f, -7f, 0);
         SaveSystem.SavePlayer(player, restart, false);
         SceneManager.LoadScene("1");

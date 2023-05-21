@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/buttons.uss?fileID=7433441132597879392&amp;guid=b55295c53686d4e469a6a94a68bb3af9&amp;type=3#buttons" />
+    <Style src="project://database/Assets/UI/labels.uss?fileID=7433441132597879392&amp;guid=30583b40fb0607b45aaf6fc16bbd05f8&amp;type=3#labels" />
+    <ui:VisualElement name="Background" style="flex-direction: column-reverse; flex-grow: 1; transition-property: scale; opacity: 1; display: flex;">
+        <ui:VisualElement name="OptionsButtons" style="height: 70%; flex-grow: 0.7; justify-content: center; flex-direction: column-reverse;">
+            <ui:Button text="back" display-tooltip-when-elided="true" name="BackOptions" class="buttons-menu" style="-unity-background-scale-mode: stretch-to-fill;" />
+            <ui:Toggle label="Toggle" name="AudioOptions" class="label-options" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

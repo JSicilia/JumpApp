@@ -1,0 +1,47 @@
+.label-options {
+    border-left-color: rgb(219, 219, 219);
+    border-right-color: rgb(219, 219, 219);
+    border-top-color: rgb(219, 219, 219);
+    border-bottom-color: rgb(219, 219, 219);
+    -unity-font: url('project://database/Assets/Fonts/JuliusSansOne-Regular.ttf?fileID=12800000&guid=338af732603b39f499a1bf682d3cebd1&type=3#JuliusSansOne-Regular');
+    font-size: 500%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 96%;
+    height: 20%;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0;
+    margin-bottom: 1%;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: rgba(0, 0, 0, 0.48);
+    -unity-font-definition: initial;
+    -unity-font-style: normal;
+    color: rgb(255, 255, 255);
+}
+
+.unity-base-field__input {
+}
+
+.unity-toggle__checkmark {
+    padding-top: 0;
+    width: 10%;
+    height: 10%;
+    flex: 0 0 auto;
+    align-self: center;
+    -unity-text-align: middle-left;
+}
+
+.unity-base-field__label {
+    align-items: flex-start;
+    width: 55%;
+    justify-content: space-around;
+    -unity-text-align: middle-right;
+}

@@ -1,0 +1,22 @@
+.tutorial-label {
+    font-size: 300%;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    -unity-font: url('project://database/Assets/Fonts/JuliusSansOne-Regular.ttf?fileID=12800000&guid=338af732603b39f499a1bf682d3cebd1&type=3#JuliusSansOne-Regular');
+    -unity-font-definition: initial;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    color: rgba(255, 255, 255, 255);
+}

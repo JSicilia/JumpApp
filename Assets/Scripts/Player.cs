@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -9,41 +10,53 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int Completions;
-    public float GameTime;
-    public int TotalJumps;
-    private float CompletionTime;
-    public ParticleSystem dust;
 
+    //Game Objects
+    public GameObject DeathDisplay;
+
+    //Ints
+    public int TotalJumps;
+    public int TotalDeaths;
+    public int Completions;
+
+    //Floats
+    public float GameTime;
+    private float CompletionTime;
     private float jumpHeight = 8.5f;
+    private float jumpValue;
+    private float directionValue;
+    public float groundCheckRadius;
+    private float CameraHeight;
+    private float CameraWidth;
+    private float jumpTimeCount;
+    public float jumpTime;
+    private float currentTime;
+
+    //Bools
+    public bool touchingGround, touchingSlope;
+    public bool isFalling;
+    public bool justJumped;
+    public bool canJump;
+
+
+    public ParticleSystem dust;
+    public TextMeshProUGUI DeathCount;
+
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider2d;
     public PhysicsMaterial2D bounceMaterial, normalMaterial;
-    public bool canJump;
-    private float jumpValue;
-    private float directionValue;
-
     public Animator animator;
     private SpriteRenderer spriteRender;
     private Vector3 startOfFall;
 
-    private float CameraHeight;
-    private float CameraWidth;
     public Camera worldCam;
-
     public Transform groundCheck;
-    public float groundCheckRadius;
-    public bool touchingGround, touchingSlope;
-    public bool isFalling;
+    
 
-    public bool justJumped;
 
     //private float startOfFall;
 
-    private float jumpTimeCount;
-    public float jumpTime;
-
-    private float currentTime;
+    
     public TimeSpan time;
 
     // Start is called before the first frame update
@@ -139,6 +152,11 @@ public class Player : MonoBehaviour
         {
             startOfFall = rb.transform.position;
 
+            //Here should be the death animation code.
+            //Addition to the death counter
+            //UI deathcounter pop up
+            PlayerDeath();
+            
             Debug.Log("player splat");
             animator.SetBool("splat", true);
             isFalling = false;
@@ -206,6 +224,18 @@ public class Player : MonoBehaviour
         Debug.Log("Completed level");
         CompletionTime = GameTime;
         SceneManager.LoadScene("2");
+    }
+
+    void PlayerDeath()
+    {
+        Debug.Log("Death called");
+        LeanTween.alpha(DeathDisplay.GetComponent<RectTransform>(), 1f, 0f);
+        LeanTween.value(DeathCount.gameObject, a => DeathCount.color = a, new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), 0f);
+        StartCoroutine(IncrementDeathCount());
+        DeathDisplay.SetActive(true);
+        LeanTween.alpha(DeathDisplay.GetComponent<RectTransform>(), 0f, .5f).setDelay(2);
+        LeanTween.value(DeathCount.gameObject, a => DeathCount.color = a, new Color(1, 1, 1, 1), new Color(1, 1, 1, 0), .5f).setDelay(2f);
+
     }
 
     void TouchInput()
@@ -308,5 +338,12 @@ public class Player : MonoBehaviour
         spriteRender.flipX = data.SpriteFlip;
 
         Debug.Log("player loaded");
+    }
+
+    public IEnumerator IncrementDeathCount()
+    {
+        yield return new WaitForSeconds(0.5f);
+        TotalDeaths = TotalDeaths + 1;
+        DeathCount.text = TotalDeaths.ToString();
     }
 }

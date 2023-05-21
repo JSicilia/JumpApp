@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/buttons.uss?fileID=7433441132597879392&amp;guid=b55295c53686d4e469a6a94a68bb3af9&amp;type=3#buttons" />
+    <ui:VisualElement name="Background" style="flex-direction: column-reverse; flex-grow: 1;">
+        <ui:VisualElement name="MenuButtons" style="height: 70%; flex-grow: 0.7; justify-content: center;">
+            <ui:Button text="CONTINUE" display-tooltip-when-elided="true" name="ContinueMain" class="buttons-menu" />
+            <ui:Button text="NEW GAME" display-tooltip-when-elided="true" name="NewGameMain" class="buttons-menu" />
+            <ui:Button text="OPTIONS" display-tooltip-when-elided="true" name="OptionsMain" class="buttons-menu" />
+            <ui:Button text="EXIT" display-tooltip-when-elided="true" name="ExitMain" class="buttons-menu" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

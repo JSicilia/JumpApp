@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/EndGameScreen.uss?fileID=7433441132597879392&amp;guid=a54183b5f41d12647b9f3082b2c2f93c&amp;type=3#EndGameScreen" />
+    <ui:VisualElement name="MenuBG" style="flex-grow: 1; transition-property: opacity; transition-duration: 0.5s; transition-timing-function: ease-in-out; transition-delay: 0s;">
+        <ui:VisualElement name="MenuLabels">
+            <ui:Label text="Label" display-tooltip-when-elided="true" enable-rich-text="true" name="LevelFinished" class="endgame-label" style="opacity: 0;" />
+            <ui:Label text="Jumps: " display-tooltip-when-elided="true" name="JumpScore" class="endgame-label" style="opacity: 0;" />
+            <ui:Label text="Label" display-tooltip-when-elided="true" style="opacity: 1; font-size: 100%; color: rgba(255, 255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
