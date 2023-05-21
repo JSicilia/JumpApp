@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/progress-bar.uss?fileID=7433441132597879392&amp;guid=a3105ecc1d5cab641968116f7f7b8e07&amp;type=3#progress-bar" />
+    <ui:VisualElement name="Body" style="flex-direction: column-reverse; flex-grow: 1;">
+        <ui:ProgressBar value="22" class="charge" style="transform-origin: right; flex-direction: column-reverse; opacity: 1; position: relative; right: auto; top: auto; height: auto; width: 50%; border-bottom-width: 100px;" />
+    </ui:VisualElement>
+</ui:UXML>
