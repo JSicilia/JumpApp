@@ -38,8 +38,11 @@ public class Player : MonoBehaviour
     public bool justJumped;
     public bool canJump;
 
+    public Slider ChargeLSlider;
+    public Slider ChargeRSlider;
 
     public ParticleSystem dust;
+    public ParticleSystem death;
     public TextMeshProUGUI DeathCount;
 
     private Rigidbody2D rb;
@@ -89,23 +92,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Total game time taken while playing.
-        GameTime = GameTime + Time.deltaTime;
 
         Vector3 pos = Camera.main.WorldToViewportPoint(rb.transform.position);
-
-
         touchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, 1<<6);
-
-
-
         touchingSlope = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, 1<<7);
-
-
 
         //If player jumps out of the screen then reset them back to where they were
         if (pos.x < -0.05 || 1.05 < pos.x)
-
         {
             rb.velocity = new Vector2(0f, 0f);
             rb.transform.position = startOfFall;
@@ -114,13 +107,16 @@ public class Player : MonoBehaviour
         }
 
         //If the players x and y velocity is 0 (completely still)
-        if (rb.velocity.x == 0 && rb.velocity.y == 0 && !touchingSlope)
+        if ((rb.velocity.x < 0.1 || rb.velocity.x > -0.1) && (rb.velocity.y < 0.1 || rb.velocity.y > -0.1) && !touchingSlope && !isFalling)
         {
             animator.SetBool("stationary", true);
+
             canJump = true;
+            //rb.sharedMaterial = normalMaterial;
         } else
         {
-            animator.SetBool("stationary", false);
+            //Debug.Log(rb.velocity.x + " & " + rb.velocity.y);
+            //animator.SetBool("stationary", false);
         }
 
 
@@ -129,18 +125,11 @@ public class Player : MonoBehaviour
         if (rb.velocity.x > 0 && !touchingGround)
         {
             spriteRender.flipX = false;
-            animator.SetBool("WallTouch", false);
         }
         if (rb.velocity.x < 0 && !touchingGround)
         {
             spriteRender.flipX = true;
-            animator.SetBool("WallTouch", false);
         }
-        if (rb.velocity.x == 0 && !touchingGround)
-        {
-            animator.SetBool("WallTouch", true);
-        }
-
 
         if (!isFalling && touchingGround)
         {
@@ -151,22 +140,16 @@ public class Player : MonoBehaviour
         if (isFalling && touchingGround && Mathf.Abs(startOfFall.y - rb.transform.position.y) > 5 && !touchingSlope)
         {
             startOfFall = rb.transform.position;
-
-            //Here should be the death animation code.
-            //Addition to the death counter
-            //UI deathcounter pop up
             PlayerDeath();
-            
-            Debug.Log("player splat");
+            animator.SetBool("landed", true);
             animator.SetBool("splat", true);
             isFalling = false;
-            Invoke("PlayerCanJump", 0.1f);
+            Invoke("PlayerCanJump", 1f);
         } else if (isFalling && touchingGround && !touchingSlope)
         {
-            Debug.Log("player hit floor no splat");
-            animator.SetTrigger("PlayerLanded");
+            animator.SetBool("landed", true);
             isFalling = false;
-            Invoke("PlayerCanJump", 0.1f);
+            Invoke("PlayerCanJump", 0.4f);
         }
 
         if (!touchingGround)
@@ -174,10 +157,12 @@ public class Player : MonoBehaviour
             animator.SetBool("Jumped", false);
             rb.sharedMaterial = bounceMaterial;
             animator.SetFloat("yVelocity", rb.velocity.y);
+            isFalling = true;
         }
         else
         {
             rb.sharedMaterial = normalMaterial;
+            animator.SetFloat("yVelocity", rb.velocity.y);
         }
 
         if (touchingSlope)
@@ -190,22 +175,6 @@ public class Player : MonoBehaviour
         }
 
         TouchInput();
-
-        if (justJumped)
-        {
-            justJumped = false;
-
-            canJump = false;
-            TotalJumps = TotalJumps + 1;
-            rb.velocity = new Vector2(directionValue, jumpValue);
-            if (jumpValue > 5)
-            {
-                CreateDust();
-            }
-            Invoke("ResetJump", 0.1f);
-
-        }
-
     }
 
     void PlayerCanJump()
@@ -215,20 +184,19 @@ public class Player : MonoBehaviour
 
     void ResetJump()
     {
-        isFalling = true;
+        //isFalling = true;
         jumpValue = 0.0f;
     }
 
     public void CompleteLevel()
     {
-        Debug.Log("Completed level");
         CompletionTime = GameTime;
         SceneManager.LoadScene("2");
     }
 
     void PlayerDeath()
     {
-        Debug.Log("Death called");
+        death.Play(); //(commented out to test performance)
         LeanTween.alpha(DeathDisplay.GetComponent<RectTransform>(), 1f, 0f);
         LeanTween.value(DeathCount.gameObject, a => DeathCount.color = a, new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), 0f);
         StartCoroutine(IncrementDeathCount());
@@ -246,21 +214,23 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.touchCount > 0 && touchingGround && canJump && !isFalling)
+        if (Input.touchCount > 0 && touchingGround && canJump)
         {
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase >= TouchPhase.Began)
             {
-                animator.SetBool("splat", false);
-               animator.SetBool("landed", false);
                 animator.SetBool("jumping", true);
-                Debug.Log("Pressed jump");
+                //ChargeRSlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(-280.8f, touch.position.y);
+                //ChargeLSlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(280.8f, touch.position.y);
                 if (touch.position.x < Screen.width / 2)
                 {
                     spriteRender.flipX = true;
                     jumpValue += Time.deltaTime * 20f;
                     directionValue = -2.6f;
+                    ChargeLSlider.value = jumpValue;
+                    ChargeRSlider.value = 0;
+
                 }
 
                 if (touch.position.x > Screen.width / 2)
@@ -268,6 +238,9 @@ public class Player : MonoBehaviour
                     spriteRender.flipX = false;
                     jumpValue += Time.deltaTime * 20f;
                     directionValue = 2.6f;
+                    
+                    ChargeRSlider.value = jumpValue;
+                    ChargeLSlider.value = 0;
                 }
 
                 if (jumpValue >= jumpHeight)
@@ -276,8 +249,8 @@ public class Player : MonoBehaviour
                 }
 
                 animator.SetFloat("jumpCharge", jumpValue);
-                currentTime = currentTime + Time.deltaTime;
-                time = TimeSpan.FromSeconds(currentTime);
+                //currentTime = currentTime + Time.deltaTime;
+                //time = TimeSpan.FromSeconds(currentTime);
                 //timer.text = time.Seconds.ToString() + ":" + time.Milliseconds.ToString();
 
 
@@ -295,10 +268,25 @@ public class Player : MonoBehaviour
                 }
                 animator.SetBool("Jumped", true);
                 animator.SetBool("jumping", false);
-                justJumped = true;
+                animator.SetBool("landed", false);
+                PlayerJumped();
                 currentTime = 0;
+                if (touchingGround)
+                {
+                    canJump = false;
+                }
             }
         }
+    }
+
+    void PlayerJumped()
+    {
+        canJump = false;
+        TotalJumps = TotalJumps + 1;
+        rb.velocity = new Vector2(directionValue, jumpValue);
+        ChargeRSlider.value = 0;
+        ChargeLSlider.value = 0;
+        Invoke("ResetJump", 0.1f);
     }
 
     private bool lastPositionMatch()
@@ -315,7 +303,7 @@ public class Player : MonoBehaviour
 
     public void CreateDust()
     {
-        dust.Play();
+        //dust.Play();
     }
 
 
