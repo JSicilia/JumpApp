@@ -74,7 +74,7 @@ public class HomeMenu : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.SetInt("SeenTutorial", 0);
-        Vector3 restart = new Vector3(-3f, -7f, 0);
+        Vector3 restart = new Vector3(-2.7f, -4.50f, 0);
         SaveSystem.SavePlayer(player, restart, false);
         SceneManager.LoadScene("1");
         Time.timeScale = 1;

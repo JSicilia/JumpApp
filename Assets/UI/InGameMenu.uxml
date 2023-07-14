@@ -1,8 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/buttons.uss?fileID=7433441132597879392&amp;guid=b55295c53686d4e469a6a94a68bb3af9&amp;type=3#buttons" />
-    <Style src="project://database/Assets/ingamemenu.uss?fileID=7433441132597879392&amp;guid=ca1d04b07ef6cc8409ecd5ecffb93fa5&amp;type=3#ingamemenu" />
+    <Style src="project://database/Assets/UI/ingamemenu.uss?fileID=7433441132597879392&amp;guid=568517ff66affbc409585767f54a5099&amp;type=3#ingamemenu" />
     <ui:VisualElement name="Background" style="flex-direction: column-reverse; flex-grow: 1;">
-        <ui:VisualElement name="MenuButtons" style="height: 70%; flex-grow: 1; justify-content: center; margin-bottom: 50%; margin-top: 50%;">
+        <ui:VisualElement name="MenuButtons" style="height: auto; flex-grow: 1; justify-content: space-between; margin-bottom: 50%; margin-top: 50%; background-image: none; max-height: 70%; align-items: center; flex-direction: column; padding-top: 10%; padding-bottom: 10%; font-size: 100%;">
             <ui:Button text="Resume" display-tooltip-when-elided="true" name="ResumeIG" class="buttons-menu" />
             <ui:Button text="restart" display-tooltip-when-elided="true" name="RestartIG" class="buttons-menu" />
             <ui:Button text="quit to menu" display-tooltip-when-elided="true" name="ExitIG" class="buttons-menu" />

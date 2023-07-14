@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -38,8 +37,7 @@ public class Player : MonoBehaviour
     public bool justJumped;
     public bool canJump;
 
-    public Slider ChargeLSlider;
-    public Slider ChargeRSlider;
+    public Slider ChargeSlider;
 
     public ParticleSystem dust;
     public ParticleSystem death;
@@ -65,6 +63,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        directionValue = 2.6f;
         GameTime = 0;
         //startOfFall = rb.transform.position;
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -120,15 +119,16 @@ public class Player : MonoBehaviour
         }
 
 
-
-
         if (rb.velocity.x > 0 && !touchingGround)
         {
             spriteRender.flipX = false;
+            directionValue = 2.6f;
         }
         if (rb.velocity.x < 0 && !touchingGround)
         {
             spriteRender.flipX = true;
+            directionValue = -2.6f;
+
         }
 
         if (!isFalling && touchingGround)
@@ -208,40 +208,50 @@ public class Player : MonoBehaviour
 
     void TouchInput()
     {
-        if (EventSystem.current.IsPointerOverGameObject() ||
+        
+        /*if (EventSystem.current.IsPointerOverGameObject() ||
             EventSystem.current.currentSelectedGameObject != null)
         {
             return;
-        }
+        }*/
 
         if (Input.touchCount > 0 && touchingGround && canJump)
         {
             Touch touch = Input.GetTouch(0);
-
+            
             if (touch.phase >= TouchPhase.Began)
             {
-                animator.SetBool("jumping", true);
-                //ChargeRSlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(-280.8f, touch.position.y);
-                //ChargeLSlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(280.8f, touch.position.y);
-                if (touch.position.x < Screen.width / 2)
+                if (touch.position.x > Screen.width / 3 && touch.position.x < (Screen.width - (Screen.width / 3)) && touch.position.y < Screen.height / 4)
                 {
+                    rb.velocity = new Vector2(0f, 0f);
+                    animator.SetBool("Running", false);
+                    animator.SetBool("jumping", true);
+                    jumpValue += Time.deltaTime * 20f;                    
+                    ChargeSlider.value = jumpValue;
+                }
+
+                if (touch.position.x < Screen.width / 3 && touch.position.y < Screen.height / 4)
+                {
+                    ChargeSlider.value = 0; ;
+                    animator.SetBool("jumping", false);
+                    animator.SetBool("Running", true);
+                    jumpValue = 0;
                     spriteRender.flipX = true;
-                    jumpValue += Time.deltaTime * 20f;
                     directionValue = -2.6f;
-                    ChargeLSlider.value = jumpValue;
-                    ChargeRSlider.value = 0;
-
+                    moveLeft();
                 }
 
-                if (touch.position.x > Screen.width / 2)
+                if (touch.position.x > (Screen.width - (Screen.width / 3)) && touch.position.y < Screen.height / 4)
                 {
+                    animator.SetBool("jumping", false);
+                    animator.SetBool("Running", true);
+                    jumpValue = 0;
                     spriteRender.flipX = false;
-                    jumpValue += Time.deltaTime * 20f;
                     directionValue = 2.6f;
-                    
-                    ChargeRSlider.value = jumpValue;
-                    ChargeLSlider.value = 0;
+                    moveRight();
                 }
+
+
 
                 if (jumpValue >= jumpHeight)
                 {
@@ -255,25 +265,29 @@ public class Player : MonoBehaviour
 
 
             }
-
-
-
-
-
+                                           
             if (touch.phase == TouchPhase.Ended)
             {
-                if (jumpValue < 2f)
+                Debug.Log("touch ended");
+                if (jumpValue > 0)
                 {
-                    jumpValue = 2f;
-                }
-                animator.SetBool("Jumped", true);
-                animator.SetBool("jumping", false);
-                animator.SetBool("landed", false);
-                PlayerJumped();
-                currentTime = 0;
-                if (touchingGround)
+                    if (jumpValue < 2f)
+                    {
+                        jumpValue = 2f;
+                    }
+                    animator.SetBool("Jumped", true);
+                    animator.SetBool("jumping", false);
+                    animator.SetBool("landed", false);
+                    PlayerJumped();
+                    currentTime = 0;
+                    if (touchingGround)
+                    {
+                        canJump = false;
+                    }
+                } else
                 {
-                    canJump = false;
+                    animator.SetBool("Running", false);
+                    rb.velocity = new Vector2(0f, 0f);
                 }
             }
         }
@@ -284,8 +298,7 @@ public class Player : MonoBehaviour
         canJump = false;
         TotalJumps = TotalJumps + 1;
         rb.velocity = new Vector2(directionValue, jumpValue);
-        ChargeRSlider.value = 0;
-        ChargeLSlider.value = 0;
+        ChargeSlider.value = 0;
         Invoke("ResetJump", 0.1f);
     }
 
@@ -304,6 +317,16 @@ public class Player : MonoBehaviour
     public void CreateDust()
     {
         //dust.Play();
+    }
+
+    void moveRight()
+    {
+        rb.velocity = new Vector2(directionValue, 0);
+    }
+
+    void moveLeft()
+    {
+        rb.velocity = new Vector2(directionValue, 0);
     }
 
 

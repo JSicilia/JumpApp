@@ -8,10 +8,8 @@ public class CameraMovement : MonoBehaviour
 {
     public Camera worldCam;
     public GameObject player;
-    public GameObject[] GameLevels;
     private float CameraHeight;
     private float CameraWidth;
-    private int CurrentChunk;
     public string[] levels;
     public float[] levelPosition;
     public float[] levelChunk;
@@ -22,13 +20,6 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        int levelValue = 0;
-        for (int i = 0; i < GameLevels.Length; i++)
-        {
-            levelPosition[i] = levelValue;
-            levelValue = levelValue + 16;
-        }
 
         float screenRatio = (float)Screen.width / (float)Screen.height;
         CameraHeight = worldCam.orthographicSize * 2;
@@ -42,7 +33,6 @@ public class CameraMovement : MonoBehaviour
             levelTag.text = levels[levelIndex];
             LeanTween.alphaText(levelTag.rectTransform, 1f, 2f).setEase(LeanTweenType.linear).setOnComplete(FadeLevelTagOut);
         }
-        LoadChunks();
     }
 
     
@@ -50,14 +40,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.transform.position.y);
-        Debug.Log(worldCam.transform.position.y + CameraHeight / 2);
         if (player.transform.position.y > (worldCam.transform.position.y + CameraHeight/2))
             {
             Debug.Log(player.transform.position.y);
             Debug.Log(worldCam.transform.position.y + CameraHeight / 2);
             worldCam.transform.position = new Vector3(worldCam.transform.position.x, worldCam.transform.position.y + CameraHeight, worldCam.transform.position.z);
-            LoadChunks();
             DisplayLevel();
 
         }
@@ -65,7 +52,7 @@ public class CameraMovement : MonoBehaviour
         if (player.transform.position.y < (worldCam.transform.position.y - CameraHeight/2))
         {
             worldCam.transform.position = new Vector3(worldCam.transform.position.x, worldCam.transform.position.y - CameraHeight, worldCam.transform.position.z);
-            LoadChunks();
+            //LoadChunks();
             //worldCam.transform.position = new Vector3(worldCam.transform.position.x, worldCam.transform.position.y - CameraHeight, worldCam.transform.position.z);
         }
     }
@@ -78,30 +65,6 @@ public class CameraMovement : MonoBehaviour
     void LevelTagHide()
     {
         levelTagObject.SetActive(false);
-    }
-
-    void LoadChunks()
-    {
-
-        CurrentChunk = System.Array.IndexOf(levelPosition, worldCam.transform.position.y);
-        GameLevels[CurrentChunk].SetActive(true);
-
-        if (CurrentChunk > 0)
-        {
-            GameLevels[(CurrentChunk - 1)].SetActive(true);
-        }
-        if (CurrentChunk <  GameLevels.Length)
-        {
-            GameLevels[(CurrentChunk + 1)].SetActive(true);
-        }
-        if (CurrentChunk > 1)
-        {
-            GameLevels[(CurrentChunk - 2)].SetActive(false);
-        }
-        if (CurrentChunk < (GameLevels.Length - 1))
-        {
-            GameLevels[(CurrentChunk + 2)].SetActive(false);
-        }
     }
 
     void DisplayLevel()

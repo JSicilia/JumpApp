@@ -8,7 +8,6 @@ public class PlayerCheck : MonoBehaviour
     public GameObject Checker;
 
     //public Image ChargeRight;
-    // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         LeanTween.alpha(Checker.GetComponent<Image>().rectTransform, 0.2f, 0.5f);

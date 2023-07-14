@@ -7,8 +7,6 @@
     font-size: 900%;
     padding-left: 0;
     padding-right: 0;
-    width: 96%;
-    height: 20%;
     white-space: normal;
     -unity-text-align: middle-center;
     margin-left: 2%;
@@ -25,6 +23,12 @@
     -unity-font-definition: initial;
     -unity-font-style: normal;
     color: rgb(255, 255, 255);
+    align-items: auto;
+    justify-content: flex-start;
+    position: relative;
+    width: 96%;
+    visibility: visible;
+    height: 15%;
 }
 
 .buttons-menu:active {
@@ -37,7 +41,6 @@
     padding-left: 0;
     padding-right: 0;
     width: 96%;
-    height: 20%;
     white-space: normal;
     -unity-text-align: middle-center;
     margin-left: 2%;
@@ -53,4 +56,5 @@
     background-color: rgba(0, 0, 0, 0.91);
     -unity-font-definition: initial;
     -unity-font-style: normal;
+    height: 100%;
 }
